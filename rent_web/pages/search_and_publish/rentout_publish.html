@@ -7,6 +7,8 @@
     <title>发布出租</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/search.main.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/my.js"></script>
 </head>
 <body>
 <header>
@@ -21,7 +23,7 @@
     </div>
     <h2>发布出租</h2>
     <div class="nav-btn nav-change">
-        <a href="seekhouse_publish.html" >发布求租</a>
+        <a href="seekhouse_publish.html">发布求租</a>
     </div>
 
 </header>
@@ -29,67 +31,75 @@
     <div class="select-type">
         <form action="">
             <fieldset>
-                <label for=""><input name="rent-type" type="radio" checked>整租</label>
-                <label for=""><input name="rent-type" type="radio" >转租</label>
-                <label for=""><input name="rent-type" type="radio" >合租</label>
+                <!--<label for=""><input name="rent-type" type="radio" checked>整租</label>-->
+                <!--<label for=""><input name="rent-type" type="radio" >转租</label>-->
+                <!--<label for=""><input name="rent-type" type="radio" >合租</label>-->
+                <div id="citys" data-chooseType="hz" class="btn-group btn-group-sm">
+                    <a id="qz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">出租</a>
+                    <a id="cz" type="button" class="btn typebtn" onclick="typebtn(this)">求租</a>
+                    <a id="hz" type="button" class="btn typebtn" onclick="typebtn(this)">搬家</a>
+                    <a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</a>
+                    <a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</a>
+                    <a id="gz" type="button" class="btn typebtn" onclick="typebtn(this)">数据</a>
+                </div>
             </fieldset>
             <fieldset class="form-middle">
                 <div class="line-box">
                     <label for="district">区域<a style="color:red;">*</a></label>
-                    <select name="district" id="subway" >
+                    <select name="district" id="subway">
                         <option selected>不限</option>
-                        <option >朝阳区</option>
-                        <option >海淀区</option>
+                        <option>朝阳区</option>
+                        <option>海淀区</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">所在区县</p>
                 </div>
                 <div class="line-box">
                     <label for="district">地铁</label>
-                    <select name="district" id="district" >
+                    <select name="district" id="district">
                         <option selected>不限</option>
-                        <option >5号线</option>
-                        <option >10号线</option>
+                        <option>5号线</option>
+                        <option>10号线</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">附近地铁</p>
                 </div>
                 <div class="line-box">
                     <label for="district">房型<a style="color:red;">*</a></label>
-                    <select name="district" id="houseType" >
+                    <select name="district" id="houseType">
                         <option selected>不限</option>
-                        <option >1居室</option>
-                        <option >2居室</option>
+                        <option>1居室</option>
+                        <option>2居室</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">几居室</p>
                 </div>
                 <div class="line-box">
                     <label for="district">租金<a style="color:red;">*</a></label>
-                    <select name="district" id="fee" >
+                    <select name="district" id="fee">
                         <option selected>不限</option>
-                        <option >1000</option>
-                        <option >2000</option>
+                        <option>1000</option>
+                        <option>2000</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info big"><input  type="checkbox" checked>全网最低</p>
+                    <p class="info big"><input type="checkbox" checked>全网最低</p>
                 </div>
 
             </fieldset>
             <fieldset class="form-middle">
-				<div class="line-box">
+                <div class="line-box">
                     <label for="district">联系<a style="color:red;">*</a></label>
-                    <select name="district" class="associate" id="" >
+                    <select name="district" class="associate" id="">
                         <option selected>微信号</option>
-                        <option >手机号</option>
+                        <option>手机号</option>
                         <!--添加候选项-->
                     </select>
-                    <p  class="info associate">推荐微信</p>
+                    <p class="info associate">推荐微信</p>
                     <input type="text" class="associate">
                 </div>
             </fieldset>
             <fieldset class="form-middle">
-				<div class="line-box">
+                <div class="line-box">
                     <label class="big" for="about">关于房子<a style="color:red;">*</a></label>
                     <textarea name="about" id="about" cols="30" rows="10" placeholder="亲，房源信息描述完整清晰更好租哦！"></textarea>
                 </div>
