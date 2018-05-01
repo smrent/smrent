@@ -21,72 +21,127 @@
         </a>
 
     </div>
+	<div id="citys" data-chooseType="hz" class="btn-group btn-group-sm">
+		<a id="qz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">出租</a>
+		<a id="cz" type="button" class="btn typebtn" onclick="typebtn(this)">求租</a>
+		<a id="hz" type="button" class="btn typebtn" onclick="typebtn(this)">搬家</a>
+		<a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</a>
+		<a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</a>
+	</div>
+	<!--
     <h2>发布出租</h2>
     <div class="nav-btn nav-change">
         <a href="seekhouse_publish.html">发布求租</a>
     </div>
-
+    -->
 </header>
 <div class="body rent_bgcolor">
     <div class="select-type">
         <form action="">
-            <fieldset>
+			
+            <!--<fieldset>-->
                 <!--<label for=""><input name="rent-type" type="radio" checked>整租</label>-->
                 <!--<label for=""><input name="rent-type" type="radio" >转租</label>-->
                 <!--<label for=""><input name="rent-type" type="radio" >合租</label>-->
-                <div id="citys" data-chooseType="hz" class="btn-group btn-group-sm">
-                    <a id="qz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">出租</a>
-                    <a id="cz" type="button" class="btn typebtn" onclick="typebtn(this)">求租</a>
-                    <a id="hz" type="button" class="btn typebtn" onclick="typebtn(this)">搬家</a>
-                    <a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</a>
-                    <a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</a>
-                    <a id="gz" type="button" class="btn typebtn" onclick="typebtn(this)">数据</a>
-                </div>
-            </fieldset>
+            <!--</fieldset>-->
+			<br>
             <fieldset class="form-middle">
+				<label class="big" for="about">基本信息</label>
                 <div class="line-box">
                     <label for="district">区域<a style="color:red;">*</a></label>
-                    <select name="district" id="subway">
-                        <option selected>不限</option>
-                        <option>朝阳区</option>
-                        <option>海淀区</option>
+                    <select name="district" id="district">
+                        <!--<option selected>不限</option>-->
+                        <option selected="">东城</option>
+                        <option>西城</option>
+                        <option>朝阳</option>
+                        <option>海淀</option>
+                        <option>通州</option>
+                        <option>昌平</option>
+                        <option>丰台</option>
+                        <option>大兴</option>
+                        <option>亦庄</option>
+                        <option>顺义</option>
+                        <option>房山</option>
+                        <option>石景山</option>
+                        <option>门头沟</option>
+                        <option>平谷</option>
+                        <option>怀柔</option>
+                        <option>密云</option>
+                        <option>延庆</option>
+                        <option>环京</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">所在区县</p>
                 </div>
                 <div class="line-box">
                     <label for="district">地铁</label>
-                    <select name="district" id="district">
-                        <option selected>不限</option>
+                    <select name="subway" id="subway">
+                        <option selected="">暂无</option>
+                        <option>1号线</option>
+                        <option>2号线</option>
+                        <option>4号线</option>
                         <option>5号线</option>
+                        <option>6号线</option>
+                        <option>8号线</option>
+                        <option>9号线</option>
                         <option>10号线</option>
+                        <option>13号线</option>
+                        <option>14号线</option>
+                        <option>15号线</option>
+                        <option>16号线</option>
+                        <option>亦庄线</option>
+                        <option>昌平线</option>
+                        <option>大兴线</option>
+                        <option>房山线</option>
+                        <option>八通线</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">附近地铁</p>
                 </div>
                 <div class="line-box">
                     <label for="district">房型<a style="color:red;">*</a></label>
-                    <select name="district" id="houseType">
-                        <option selected>不限</option>
-                        <option>1居室</option>
-                        <option>2居室</option>
+                    <select name="room_type" id="room_type">
+                        <option>床位</option>
+                        <option>单间</option>
+                        <option>一室</option>
+                        <option>二室</option>
+                        <option>三室</option>
+                        <option>四室</option>
+                        <option>五室及以上</option>
                         <!--添加候选项-->
                     </select>
                     <p class="info">几居室</p>
                 </div>
                 <div class="line-box">
                     <label for="district">租金<a style="color:red;">*</a></label>
-                    <select name="district" id="fee">
-                        <option selected>不限</option>
-                        <option>1000</option>
-                        <option>2000</option>
+                    <select name="price" id="price">
+                        <option>100以下</option>
+                        <option>100~500</option>
+                        <option>500~1k</option>
+                        <option>1~1.5k</option>
+                        <option>1.5~2k</option>
+                        <option>2~2.5k</option>&gt;
+                        <option>2.5~3k</option>
+                        <option>3~3.5k</option>
+                        <option>3.5~4k</option>
+                        <option>4~4.5k</option>
+                        <option>4.5~5k</option>
+                        <option>5~5.5k</option>
+                        <option>5.5~6k</option>
+                        <option>6~6.5k</option>
+                        <option>6.5~7k</option>
+                        <option>7~7.5k</option>
+                        <option>7.5~8k</option>
+                        <option>8k以上</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info big"><input type="checkbox" checked>全网最低</p>
+                    <!--<p class="info big"><input type="checkbox" checked>全网最低</p>-->
+					<p class="info">月租金</p>
                 </div>
 
             </fieldset>
             <fieldset class="form-middle">
+				<label class="big" for="about">联系方式</label>
                 <div class="line-box">
                     <label for="district">联系<a style="color:red;">*</a></label>
                     <select name="district" class="associate" id="">
