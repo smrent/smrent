@@ -28,9 +28,10 @@ header {
 }
 
 .nav-return {
-    width: 25%;
+    width: 20%;
     float: left;
     text-align: left;
+    margin: 10px 0;
 }
 .nav-change {
     width: 25%;
@@ -46,7 +47,7 @@ div.nav-change a{
 }
 
 .nav-btn a {
-    padding: 10px 15px 10px 15px;
+    padding:7.5px 15px 7.5px 15px;
 }
 
 a, a:visited, a:link, a:focus, a:hover {
@@ -215,6 +216,7 @@ textarea{
     display: inline-flex;
     vertical-align: middle;
     height: 35px;
+    margin: 10px 0;
 }
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
@@ -280,4 +282,15 @@ textarea{
     border: 1px solid #e57633;
     color: #fff;
     background-color: #fb962a;
+}
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.kefu{
+    font-size: 1.4em;
+    margin: 12px 15px;
 }
