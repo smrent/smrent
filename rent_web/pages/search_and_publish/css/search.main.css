@@ -242,8 +242,8 @@ textarea{
 
 .btn.btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #5ba5f9;
+    border-color:#5ba5f9;
 }
 .btn {
     display: inline-block;
@@ -264,5 +264,20 @@ textarea{
     color: #000;
 }
 .btn{
-    background-color: #ccc;
+    background-color: #e0e0e0;
+}
+.btn.search-btn{
+    width: 15%;
+    height: 2em;
+    padding:0;
+}
+.btn.btn-color-blue{
+    background-color: #5ba5f9;
+    color: #fff;
+    border-color: #007bff;
+}
+.btn.btn-color-orange{
+    border: 1px solid #e57633;
+    color: #fff;
+    background-color: #fb962a;
 }
