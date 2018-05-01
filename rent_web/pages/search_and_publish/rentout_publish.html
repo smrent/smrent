@@ -9,6 +9,132 @@
     <link href="css/search.main.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/my.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	function Check_AddRentoutPublish(){//验证格式
+		//var rent_type=$(" input[ name='rent_type' ] ").val();
+		var rent_type=$("input[name='rent_type']:checked").val();
+		var district=$(" select[ name='district' ] ").val();
+		var subway=$(" select[ name='subway' ] ").val();
+		var room_type=$(" select[ name='room_type' ] ").val();
+		//var zuidi=$(" input[ name='zuidi' ] ").val();
+		var w_or_m=$(" select[ name='w_or_m' ] ").val();
+		var contact=$(" input[ name='contact' ] ").val();
+		var about=$(" textarea[ name='about' ] ").val();
+		//alert(about);
+		//联系方式
+		if(contact==""){//联系方式为空
+			if(w_or_m=="微信号"){
+					alert ("请输入微信号");
+				document.form.contact.focus();
+				return false;
+				}else if (w_or_m=="手机号"){
+						alert ("请输入手机号");
+					document.form.contact.focus();
+					return false;
+				}
+		}else{//联系方式不为空
+			if(w_or_m=="微信号"){
+					 //alert("微信号");
+					 if(contact.indexOf("@") != -1){//含有@
+							//alert('有at');
+							var myreg=/^([a-z0-9A-Z]+[-|.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?.)+[a-zA-Z]{2,}$/;
+							if(!myreg.test(contact)) {
+								  alert('请输入有效的微信号！'); 
+								  document.form.contact.focus();
+								return false; 
+							}
+							if (about == ""){
+								alert ("请输入房子简介");
+								  document.form.about.focus();
+								  return false;
+						}
+					 }else{//不含有@
+							//alert('无at');
+							var reg1 = /^([1-9])+\d{5,19}$/;  //qq号 6 - 20
+			  var reg2 = /^(1[3-9])+\d{9}$/;  //qq号或者手机号 11
+			  var reg3 = /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/; //微信号带字母的 6-20
+			  if(reg1.test(contact)){
+				//alert('请输入有效的微信号！'); 
+							  //document.form.contact.focus();
+							  //return false; 
+							  //关于房子
+							if (about == ""){
+								alert ("请输入房子简介");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else if(reg2.test(contact)){
+				if (about == ""){
+								alert ("请输入房子简介");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else if(reg3.test(contact)){
+				if (about == ""){
+								alert ("请输入房子简介");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else{
+				alert('请输入有效的微信号！'); 
+								document.form.contact.focus();
+							  return false; 
+			  }
+					 }
+				}else if (w_or_m=="手机号"){
+					  //alert("手机号");
+						//var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+						//var myreg = /1[3-9]\\d{9}/; 
+						/**
+						 * 验证手机号码
+						 * 
+						 * 移动号码段:139、138、137、136、135、134、150、151、152、157、158、159、182、183、187、188、147
+						 * 联通号码段:130、131、132、136、185、186、145
+						 * 电信号码段:133、153、180、189
+						 */
+						//var myreg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))+\d{8}$/;
+						var myreg = /^(1[3-9])+\d{9}$/;
+					  if(contact.length != 11) {
+							alert('请输入有效的手机号！'); 
+							document.form.contact.focus();
+							return false; 
+					  }else if(!myreg.test(contact)) {
+							alert('请输入有效的手机号！'); 
+							document.form.contact.focus();
+							return false; 
+					  }else {
+						  if (about == ""){
+								alert ("请输入房子简介");
+								  document.form.about.focus();
+								  return false;
+							}
+					  }
+			  }
+		}	
+	}
+	function countChar(){<!--字数统计-->
+		var curLength = document.getElementById("about").value.length;
+			if (curLength>140){
+				alert("超过字数限制，多出的字将被截断！" );
+				document.getElementById("about").value = document.getElementById("about").value.substr(0,140);
+				curLength = 140;
+			}
+		document.getElementById("counter").innerHTML = 140 - document.getElementById("about").value.length;
+	};
+	/*
+	function $(m){
+		 return document.getElementById(m);
+	}*/
+	function xiangying(){
+	  if(/msie/i.test(navigator.userAgent)){
+		  document.getElementById("about").onpropertychange = countChar;
+		 } else {
+		  document.getElementById("about").addEventListener("input",countChar,false);
+		 }
+	}
+	window.onload = xiangying;
+</script>
 </head>
 <body>
 <header>
@@ -74,31 +200,6 @@
                     <p class="info">所在区县</p>
                 </div>
                 <div class="line-box">
-                    <label for="district">地铁</label>
-                    <select name="subway" id="subway">
-                        <option selected="">暂无</option>
-                        <option>1号线</option>
-                        <option>2号线</option>
-                        <option>4号线</option>
-                        <option>5号线</option>
-                        <option>6号线</option>
-                        <option>8号线</option>
-                        <option>9号线</option>
-                        <option>10号线</option>
-                        <option>13号线</option>
-                        <option>14号线</option>
-                        <option>15号线</option>
-                        <option>16号线</option>
-                        <option>亦庄线</option>
-                        <option>昌平线</option>
-                        <option>大兴线</option>
-                        <option>房山线</option>
-                        <option>八通线</option>
-                        <!--添加候选项-->
-                    </select>
-                    <p class="info">附近地铁</p>
-                </div>
-                <div class="line-box">
                     <label for="district">房型<a style="color:red;">*</a></label>
                     <select name="room_type" id="room_type">
                         <option>床位</option>
@@ -138,8 +239,80 @@
                     <!--<p class="info big"><input type="checkbox" checked>全网最低</p>-->
 					<p class="info">月租金</p>
                 </div>
-
+				<div class="line-box">
+				<label class="big" for="about">关于房子<a style="color:red;">*</a></label>
+				还可以输入<span id="counter">140</span>字<br/><!--字数统计结束&nbsp;&nbsp;--> 
+	   								<textarea style="overflow-y:hidden;overflow-x:hidden" class="wenben" cols="30" rows="10" name="about" id="about" maxlength="140" onkeydown='countChar();' onkeyup='countChar();'></textarea>
+				</div>	
             </fieldset>
+			
+			<fieldset class="form-middle">
+			<label class="big" for="about">更多信息</label>
+			<div class="line-box">
+				<label for="district">地铁</label>
+				<select name="subway" id="subway">
+				    <option>请选择</option>
+					<option>暂无</option><!--selected=""-->
+					<option>1号线</option>
+					<option>2号线</option>
+					<option>4号线</option>
+					<option>5号线</option>
+					<option>6号线</option>
+					<option>8号线</option>
+					<option>9号线</option>
+					<option>10号线</option>
+					<option>13号线</option>
+					<option>14号线</option>
+					<option>15号线</option>
+					<option>16号线</option>
+					<option>亦庄线</option>
+					<option>昌平线</option>
+					<option>大兴线</option>
+					<option>房山线</option>
+					<option>八通线</option>
+					<!--添加候选项-->
+				</select>
+				<p class="info">附近地铁</p>
+			</div>
+			<div class="line-box">
+				<label for="district">楼层</label>
+				<select name="floor_type" id="floor_type">
+					<option>请选择</option>
+					<option>地下室</option>
+					<option>1楼</option>
+					<option>2楼</option>
+					<option>3楼</option>
+					<option>4楼</option>
+					<option>5楼</option>
+					<option>6楼</option>
+					<option>6楼以上</option>
+					<!--添加候选项-->
+				</select>
+				<p class="info">所在楼层</p>
+			</div>
+			<div class="line-box">
+				<label for="district">朝向</label>
+				<select name="elevator_type" id="elevator_type">
+				    <option>请选择</option>
+					<option>南北</option>
+					<option>东西</option>
+					<!--添加候选项-->
+				</select>
+				<p class="info">房子朝向</p>
+			</div>
+			<div class="line-box">
+				<label for="district">电梯</label>
+				<select name="elevator_type" id="elevator_type">
+				    <option>请选择</option>
+					<option>无电梯</option>
+					<option>有电梯</option>
+					<!--添加候选项-->
+				</select>
+				<p class="info">有无电梯</p>
+			</div>
+			
+            </fieldset>
+			
             <fieldset class="form-middle">
 				<label class="big" for="about">联系方式</label>
                 <div class="line-box">
@@ -153,13 +326,7 @@
                     <input type="text" class="associate">
                 </div>
             </fieldset>
-            <fieldset class="form-middle">
-			<label class="big" for="about">更多信息</label>
-                <div class="line-box">
-                    <label class="big" for="about">关于房子<a style="color:red;">*</a></label>
-                    <textarea name="about" id="about" cols="30" rows="10" placeholder="亲，房源信息描述完整清晰更好租哦！"></textarea>
-                </div>
-            </fieldset>
+            
             <fieldset class="form-bottom">
                 <input class="rentout" type="submit" value="发布">
             </fieldset>
