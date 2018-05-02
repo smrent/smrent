@@ -7,7 +7,7 @@
     <title>发布出租</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/search.main.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
     <script src="js/my.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -21,18 +21,18 @@
 		var w_or_m=$(" select[ name='w_or_m' ] ").val();
 		var contact=$(" input[ name='contact' ] ").val();
 		var about=$(" textarea[ name='about' ] ").val();
-		//alert(about);
+		//alert(contact);
 		//联系方式
 		if(contact==""){//联系方式为空
 			if(w_or_m=="微信号"){
-					alert ("请输入微信号");
+				alert ("请输入微信号");
 				document.form.contact.focus();
 				return false;
-				}else if (w_or_m=="手机号"){
-						alert ("请输入手机号");
-					document.form.contact.focus();
-					return false;
-				}
+			}else if (w_or_m=="手机号"){
+				alert ("请输入手机号");
+				document.form.contact.focus();
+				return false;
+			}
 		}else{//联系方式不为空
 			if(w_or_m=="微信号"){
 					 //alert("微信号");
@@ -45,7 +45,7 @@
 								return false; 
 							}
 							if (about == ""){
-								alert ("请输入房子简介");
+								alert ("请输入房子简介，更快出租哦~");
 								  document.form.about.focus();
 								  return false;
 						}
@@ -60,19 +60,19 @@
 							  //return false; 
 							  //关于房子
 							if (about == ""){
-								alert ("请输入房子简介");
+								alert ("请输入房子简介，更快出租哦~");
 								  document.form.about.focus();
 								  return false;
 							}
 			  }else if(reg2.test(contact)){
 				if (about == ""){
-								alert ("请输入房子简介");
+								alert ("请输入房子简介，更快出租哦~");
 								  document.form.about.focus();
 								  return false;
 							}
 			  }else if(reg3.test(contact)){
 				if (about == ""){
-								alert ("请输入房子简介");
+								alert ("请输入房子简介，更快出租哦~");
 								  document.form.about.focus();
 								  return false;
 							}
@@ -105,7 +105,7 @@
 							return false; 
 					  }else {
 						  if (about == ""){
-								alert ("请输入房子简介");
+								alert ("请输入房子简介，更快出租哦~");
 								  document.form.about.focus();
 								  return false;
 							}
@@ -141,7 +141,7 @@
     <!--搜索链接跳转-->
     <div class="nav-btn nav-return">
         <!--返回需要跳转的页面暂时没写-->
-        <a href="#">
+        <a href="../index.php">
             <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
             <!--<div class="return">返回</div>-->
         </a>
@@ -154,7 +154,7 @@
 		<a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</a>
 		<a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</a>
 	</div>
-    <div class="float-right kefu"><a href=""><i class="fa fa-user-o " aria-hidden="true"></i></a></div>
+    <div class="float-right kefu"><a href="https://m.weibo.cn/u/3211938893"><i class="fa fa-user-o " aria-hidden="true"></i></a></div>
 	<!--
     <h2>发布出租</h2>
     <div class="nav-btn nav-change">
@@ -164,14 +164,82 @@
 </header>
 <div class="body rent_bgcolor">
     <div class="select-type">
-        <form action="">
+        <form name="form" id="form" action="../php/AddRentoutPublish.php" method="post" onsubmit="return Check_AddRentoutPublish();">
 			
             <!--<fieldset>-->
                 <!--<label for=""><input name="rent-type" type="radio" checked>整租</label>-->
                 <!--<label for=""><input name="rent-type" type="radio" >转租</label>-->
                 <!--<label for=""><input name="rent-type" type="radio" >合租</label>-->
             <!--</fieldset>-->
-			<br>
+			<br><br>
+			
+			<fieldset class="form-middle">
+			<!--<label class="big" for="about">更多信息</label>-->
+			<div class="line-box">
+				<label for="district">地铁</label>
+				<select name="subway" id="subway">
+				    <option>请选择</option>
+					<option>暂无</option><!--selected=""-->
+					<option>1号线</option>
+					<option>2号线</option>
+					<option>4号线</option>
+					<option>5号线</option>
+					<option>6号线</option>
+					<option>8号线</option>
+					<option>9号线</option>
+					<option>10号线</option>
+					<option>13号线</option>
+					<option>14号线</option>
+					<option>15号线</option>
+					<option>16号线</option>
+					<option>亦庄线</option>
+					<option>昌平线</option>
+					<option>大兴线</option>
+					<option>房山线</option>
+					<option>八通线</option>
+					<!--添加候选项-->
+				</select>
+				<!--<p class="info">附近地铁</p>-->
+			</div>
+			<div class="line-box">
+				<label for="district">楼层</label>
+				<select name="floor_type" id="floor_type">
+					<option>请选择</option>
+					<option>地下室</option>
+					<option>1楼</option>
+					<option>2楼</option>
+					<option>3楼</option>
+					<option>4楼</option>
+					<option>5楼</option>
+					<option>6楼</option>
+					<option>6楼以上</option>
+					<!--添加候选项-->
+				</select>
+				<!--<p class="info">所在楼层</p>-->
+			</div>
+			<div class="line-box">
+				<label for="district">朝向</label>
+				<select name="orientation_type" id="orientation_type">
+				    <option>请选择</option>
+					<option>南北</option>
+					<option>东西</option>
+					<!--添加候选项-->
+				</select>
+				<!--<p class="info">房子朝向</p>-->
+			</div>
+			<div class="line-box">
+				<label for="district">电梯</label>
+				<select name="elevator_type" id="elevator_type">
+				    <option>请选择</option>
+					<option>无电梯</option>
+					<option>有电梯</option>
+					<!--添加候选项-->
+				</select>
+				<!--<p class="info">有无电梯</p>-->
+			</div>
+			
+            </fieldset>
+			
             <fieldset class="form-middle">
 				<!--<label class="big" for="about">基本信息</label>-->
                 <div class="line-box">
@@ -240,92 +308,24 @@
                     <!--<p class="info big"><input type="checkbox" checked>全网最低</p>-->
 					<!--<p class="info">月租金</p>-->
                 </div>
+
+				<!--<label class="big" for="about">联系方式</label>-->
+				<div class="line-box">
+					<label for="district">联系<a style="color:red;">*</a></label>
+					<select name="w_or_m" class="associate" id="w_or_m" >
+						<option selected>微信号</option>
+						<option>手机号</option>
+						<!--添加候选项-->
+					</select>
+					<!--<p class="info associate">推荐微信</p>-->
+					<input type="text" class="associate" name="contact" id="contact" maxlength="20">
+				</div>
+				
 				<div class="line-box">
 				<label class="big" for="about">关于房子<a style="color:red;">*</a></label>
 				还可以输入<span id="counter">140</span>字<br/><!--字数统计结束&nbsp;&nbsp;--> 
 	   								<textarea style="overflow-y:hidden;overflow-x:hidden" class="wenben" cols="30" rows="10" name="about" id="about" maxlength="140" onkeydown='countChar();' onkeyup='countChar();'></textarea>
 				</div>	
-            </fieldset>
-			
-			<fieldset class="form-middle">
-			<!--<label class="big" for="about">更多信息</label>-->
-			<div class="line-box">
-				<label for="district">地铁</label>
-				<select name="subway" id="subway">
-				    <option>请选择</option>
-					<option>暂无</option><!--selected=""-->
-					<option>1号线</option>
-					<option>2号线</option>
-					<option>4号线</option>
-					<option>5号线</option>
-					<option>6号线</option>
-					<option>8号线</option>
-					<option>9号线</option>
-					<option>10号线</option>
-					<option>13号线</option>
-					<option>14号线</option>
-					<option>15号线</option>
-					<option>16号线</option>
-					<option>亦庄线</option>
-					<option>昌平线</option>
-					<option>大兴线</option>
-					<option>房山线</option>
-					<option>八通线</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">附近地铁</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">楼层</label>
-				<select name="floor_type" id="floor_type">
-					<option>请选择</option>
-					<option>地下室</option>
-					<option>1楼</option>
-					<option>2楼</option>
-					<option>3楼</option>
-					<option>4楼</option>
-					<option>5楼</option>
-					<option>6楼</option>
-					<option>6楼以上</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">所在楼层</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">朝向</label>
-				<select name="elevator_type" id="elevator_type">
-				    <option>请选择</option>
-					<option>南北</option>
-					<option>东西</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">房子朝向</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">电梯</label>
-				<select name="elevator_type" id="elevator_type">
-				    <option>请选择</option>
-					<option>无电梯</option>
-					<option>有电梯</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">有无电梯</p>-->
-			</div>
-			
-            </fieldset>
-			
-            <fieldset class="form-middle">
-				<!--<label class="big" for="about">联系方式</label>-->
-                <div class="line-box">
-                    <label for="district">联系<a style="color:red;">*</a></label>
-                    <select name="district" class="associate" id="">
-                        <option selected>微信号</option>
-                        <option>手机号</option>
-                        <!--添加候选项-->
-                    </select>
-                    <!--<p class="info associate">推荐微信</p>-->
-                    <input type="text" class="associate">
-                </div>
             </fieldset>
             
             <fieldset class="form-bottom">
