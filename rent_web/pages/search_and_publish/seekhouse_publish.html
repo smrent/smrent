@@ -13,21 +13,31 @@
     <!--搜索链接跳转-->
     <div class="nav-btn nav-return">
         <!--返回需要跳转的页面暂时没写-->
-        <a href="#">
+        <a href="../qiuzu.php">
             <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
             <!--<div class="return">返回</div>-->
         </a>
 
     </div>
-    <h2>发布求租</h2>
+	<div id="citys" data-chooseType="hz" class="btn-group btn-group-sm float-left">
+		<a id="qz" type="button" class="btn typebtn" onclick="typebtn(this)" href="rentout_publish.html">出租</a>
+		<a id="cz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">求租</a>
+		<a id="hz" type="button" class="btn typebtn" onclick="typebtn(this)">搬家</a>
+		<a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</a>
+		<a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</a>
+	</div>
+    <div class="float-right kefu"><a href="https://m.weibo.cn/u/3211938893"><i class="fa fa-user-o " aria-hidden="true"></i></a></div>
+    <!--
+	<h2>发布求租</h2>
     <div class="nav-btn nav-change">
         <a href="rentout_publish.html" >发布出租</a>
     </div>
-
+    -->
 </header>
 <div class="body seek_bgcolor">
     <div class="select-type">
         <form action="">
+		    <br><br>
             <fieldset>
                 <label for=""><input name="rent-type" type="radio" checked>求整租</label>
                 <label for=""><input name="rent-type" type="radio" >求合租</label>
@@ -41,7 +51,6 @@
                         <option >海淀区</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info">所在区县</p>
                 </div>
                 <div class="line-box">
                     <label for="district">地铁</label>
@@ -51,7 +60,6 @@
                         <option >10号线</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info">附近地铁</p>
                 </div>
                 <div class="line-box">
                     <label for="district">房型<a style="color:red;">*</a></label>
@@ -61,7 +69,6 @@
                         <option >2居室</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info">几居室</p>
                 </div>
                 <div class="line-box">
                     <label for="district">租金<a style="color:red;">*</a></label>
@@ -71,7 +78,6 @@
                         <option >2000</option>
                         <!--添加候选项-->
                     </select>
-                    <p class="info">月租金</p>
                 </div>
 
             </fieldset>
@@ -84,7 +90,6 @@
                         <option >手机号</option>
                         <!--添加候选项-->
                     </select>
-                    <p  class="info associate">推荐微信</p>
                     <input type="text" class="associate">
                 </div>
             </fieldset>
