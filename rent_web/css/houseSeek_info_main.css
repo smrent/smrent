@@ -5,3 +5,88 @@ div.room-desc{
 .content-box{
     margin-top: 10px;
 }
+.header{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px #e8e8e8 solid;
+    text-align: center;
+}
+.nav-return {
+    width: 18%;
+    float: left;
+    text-align: left;
+    margin: 10px 0;
+}
+.float-left {
+    float: left;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    height: 35px;
+    margin: 10px 0;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-group > .btn:first-child {
+    margin-left: 0;
+}
+.btn-group-sm > .btn, .btn-sm {
+    padding: .1rem .5rem;
+    font-size: .875rem;
+    line-height: 1.8;
+    border-radius: .2rem;
+    /* border: 0.3rem solid rgba(244, 240, 249, 0.36); */
+}
+.btn-group-vertical > .btn, .btn-group > .btn {
+    position: relative;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin-bottom: 0;
+}
+.tab-color-rent-house {
+    color: #fff;
+    background-color: #3383fa;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
+}
+.btn {
+    background-color: #e0e0e0;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+    color: #000;
+    border: 0.3rem solid rgb(224, 224, 224);
+}
+.kefu {
+    font-size: 1.4em;
+    margin: 12px 15px;
+}
+.float-right {
+    float: right;
+}
+.nav-btn a {
+    padding: 7.5px 15px 7.5px 15px;
+}
+.nav-btn a {
+    font-size: 10px;
+}
