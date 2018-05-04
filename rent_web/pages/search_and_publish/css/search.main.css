@@ -247,7 +247,20 @@ textarea {
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
+    -moz-border-radius-topleft:.4rem ;
+    border-top-left-radius: 0.4em;
+    border-bottom-left-radius:.4rem ;
 }
+.btn-group > .btn:last-child:not(:first-child):not(.dropdown-toggle) {
+    border-top-leftt-radius: 0;
+    border-bottom-left-radius: 0;
+
+    -moz-border-radius-topleft:.4rem ;
+    border-top-right-radius: 0.4em;
+    border-bottom-right-radius:.4rem ;
+}
+
 
 .btn-group > .btn:first-child {
     margin-left: 0;
@@ -260,11 +273,12 @@ textarea {
     margin-bottom: 0;
 }
 
+
 .btn-group-sm > .btn, .btn-sm {
     padding: .1rem .5rem;
     font-size: .875rem;
     line-height: 1.8;
-    border-radius: .2rem;
+    /*border-radius: .2rem;*/
     /*border: 0.3rem solid rgba(244, 240, 249, 0.36);*/
 }
 
@@ -291,7 +305,7 @@ textarea {
     padding: .5rem .75rem;
     font-size: 1rem;
     line-height: 1.25;
-    border-radius: .25rem;
+    /*border-radius: .25rem;*/
     transition: all .15s ease-in-out;
     color: #000;
     border: 0.3rem solid rgb(224, 224, 224);
