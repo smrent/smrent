@@ -30,7 +30,7 @@ header {
 }
 
 .nav-return {
-    width: 18%;
+    width: 16%;
     float: left;
     text-align: left;
     margin: 10px 0;
@@ -73,7 +73,7 @@ body {
 }
 
 .body {
-    margin-top: 40px;
+    margin-top: 56px;
     background-color: gainsboro;
 
 }
@@ -253,7 +253,7 @@ textarea {
     border-bottom-left-radius:.4rem ;
 }
 .btn-group > .btn:last-child:not(:first-child):not(.dropdown-toggle) {
-    border-top-leftt-radius: 0;
+    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
     -moz-border-radius-topleft:.4rem ;
@@ -275,9 +275,10 @@ textarea {
 
 
 .btn-group-sm > .btn, .btn-sm {
-    padding: .1rem .5rem;
+    padding: .1rem .1rem;
     font-size: .875rem;
     line-height: 1.8;
+
     /*border-radius: .2rem;*/
     /*border: 0.3rem solid rgba(244, 240, 249, 0.36);*/
 }
