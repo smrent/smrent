@@ -274,8 +274,8 @@ textarea {
 
 .btn.btn-primary {
     color: #fff;
-    background-color: #5ba5f9;
-    border-color: #5ba5f9;
+    background-color: #3383fa;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
 }
 
 .btn {
@@ -333,7 +333,7 @@ textarea {
 }
 /*-------------------------------*/
 .move-bgcolor {
-    background-color: #fdc21969
+    background-color: rgba(253, 194, 25, 0.4);
 }
 .tab-color-move-house{
     color: #fff;
@@ -349,7 +349,7 @@ textarea {
 }
 /*-------------------------------*/
 .clean-bgcolor{
-    background-color: #4587f569;
+    background-color: rgba(69, 135, 245, 0.4);
 }
 .tab-color-clean-house{
     color: #fff;
@@ -365,7 +365,7 @@ textarea {
 }
 /*-------------------------------*/
 .repaire-bgcolor{
-    background-color: #5cc47e69;
+    background-color: rgba(92, 196, 126, 0.4);
 }
 .tab-color-repaire-house{
     color: #fff;
@@ -381,7 +381,7 @@ textarea {
 }
 /*-------------------------------*/
 .seek-bgcolor{
-    background-color: #f74a3769;
+    background-color: rgba(247, 74, 55,0.4);
 }
 .tab-color-seek-house{
     color: #fff;
@@ -397,7 +397,7 @@ textarea {
 }
 /*----------------------------------*/
 .rent-bgcolor{
-    background-color:#3383fa69;
+    background-color:rgba(51, 131, 250, 0.4);
 }
 .tab-color-rent-house{
     color: #fff;
