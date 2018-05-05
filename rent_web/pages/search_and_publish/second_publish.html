@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>发布出租</title>
+    <title>发布二手</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/search.main.css" rel="stylesheet">
     <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
@@ -148,12 +148,12 @@
 
     </div>
 	<div id="citys" data-chooseType="hz" class="btn-group btn-group-sm float-left">
-		<a id="qz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">出租</a>
+		<a id="qz" type="button" class="btn typebtn" onclick="typebtn(this)" href="rentout_publish.html">出租</a>
 		<a id="cz" type="button" class="btn typebtn" onclick="typebtn(this)" href="seekhouse_publish.html">求租</a>
 		<a id="hz" type="button" class="btn typebtn" onclick="typebtn(this)" href="movehouse_publish.html">搬家</a>
 		<a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)" href="cleanhouse_publish.html">保洁</a>
 		<a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)" href="repairhouse_publish.html">维修</a>
-		<a id="es" type="button" class="btn typebtn" onclick="typebtn(this)" href="second_publish.html">二手</a>
+		<a id="es" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">二手</a>
 	</div>
     <div class="float-right kefu"><a href="https://m.weibo.cn/u/3211938893"><i class="fa fa-user-o " aria-hidden="true"></i></a></div>
 	<!--
@@ -167,9 +167,8 @@
     <div class="select-type">
         <form name="form" id="form" action="../php/AddRentoutPublish.php" method="post" onsubmit="return Check_AddRentoutPublish();">
             <fieldset>
-                <label for=""><input name="rent-type" type="radio" checked>整租</label>
-                <label for=""><input name="rent-type" type="radio" >转租</label>
-                <label for=""><input name="rent-type" type="radio" >合租</label>
+                <label for=""><input name="rent-type" type="radio" checked>当面交易</label>
+                <label for=""><input name="rent-type" type="radio" >托管交易</label>
             </fieldset>
 
 			<fieldset class="form-middle">
